@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <style>
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
+      
+      : 100%;
+          backgro
+      .contantbrief {
+
+          width: 100%;
+          height: 100%;
+          background: rgb(255, 255, 255);
+          border-radius: 5px;
+          overflow: auto;
+          display: flex;
+          flex-direction: column;
+
+          align-items: center;
+      }
+
+      style
+
+
+        
+        <body>
+          
+      
+    <script>
+      var cardimg = document.querySelector(".cards img");
+      var cardtext = document.querySelector(".cardstext");
+
+      cardimg.addEventListener("click", function () {
+        cardtext.style.zIndex = "6";
+        console.log(cardtext);
+        cardtext.addEventListener("click", function () {
+          cardtext.style.zIndex = "0";
+        });
+      });
+    </script>
+  </body>
+</html>

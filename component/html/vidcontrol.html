@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    background: #000;
+    justify-content:center;
+    align-items:center;
+}
+.vidcontainer{
+    width: 350px;
+    
+    background: #ffffff;
+}
+.vidcontainer video{
+    width: 100%;
+    height: ;
+}
+#vidcontrol{
+    width: 100%;
+    height: 30px;
+    background: #99f93a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#vidcontrol button{
+   width: 10%;
+   height: 20px;
+   border: none;
+   background: #ffffff;
+
+}#vidcontrol button img{
+width: 100%;
+}
+#vidcontrol :nth-child(4){
+    width: 15%;
+}
+    </style>
+</head>
+<body>
+    
+    <div class="vidcontainer">
+        <video id="vid" src="ufovid/SouthAsia.webm">dfd</video>
+        <div id="vidcontrol">
+            <button id="playpause"><img src="play-svgrepo-com.svg" alt=""></button>
+            <input id="playbar" type="range">
+            <button id="mute"><img src="volume-muted-svgrepo-com.svg" alt=""></button>
+            <input id="volume" min="0" max="1"step="0.1" type="range">
+            <button id="fullscreen">fullvid</button>
+        </div>
+    </div>
+
+    <script>
+
+
+var video=document.getElementById('vid')
+
+
+var ppbutton=document.getElementById('playpause')
+
+
+var muteimg=document.querySelector('#mute')
+var fullscreen=document.getElementById('fullscreen')
+
+var slide=document.getElementById('playbar')
+var volume=document.getElementById('volume')
+console.log(muteimg)
+
+ppbutton.addEventListener('click',function(){
+
+    if(video.paused==true){
+        video.play();
+        ppbutton.innerHTML="stop"
+        console.log('good')
+    }
+    else{
+        video.pause();
+        ppbutton.innerHTML="play"
+    }
+});
+muteimg.addEventListener('click', function(){
+    if(video.muted==false){
+        video.muted=true;
+        muteimg.innerHTML="mute"
+    }else{
+
+        video.muted=false;
+        muteimg.innerHTML="unmute"
+    }
+})
+fullscreen.addEventListener("click", function() {
+  if (video.requestFullscreen) {
+    video.requestFullscreen();
+  } else if (video.mozRequestFullScreen) {
+    video.mozRequestFullScreen();}
+    else if (video.webkitRequestFullscreen) {
+    video.webkitRequestFullscreen(); // Chrome and Safari
+  }
+
+}) // Firefox
+// Event listener for the seek bar
+slide.addEventListener("change", function() {
+  // Calculate the new time
+  var time = video.duration * (slide.value / 100);
+
+  // Update the video time
+  video.currentTime = time;
+});
+// Update the seek bar as the video plays
+video.addEventListener("timeupdate", function() {
+  // Calculate the slider value
+  var value = (100 / video.duration) * video.currentTime;
+
+  // Update the slider value
+  slide.value = value;
+});
+// Pause the video when the slider handle is being dragged
+slide.addEventListener("mousedown", function() {
+  video.pause();
+});
+
+// Play the video when the slider handle is dropped
+slide.addEventListener("mouseup", function() {
+  video.play();
+});
+// Event listener for the volume bar
+volume.addEventListener("change", function() {
+  // Update the video volume
+  video.volume = volume.value;
+});
+
+    </script>
+</body>
+</html>

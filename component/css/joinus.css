@@ -1,0 +1,178 @@
+.mainbox2{
+    width: 100vw;
+    height: 350px;
+
+}
+.isolate{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background:rgb(255, 255, 255);
+    
+}
+.brandbox{
+width:50%;
+height: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.brandboxtext{
+    position: relative;
+    width:90%;
+    height: 70%;
+    background: #ffffff;
+    border-radius: 5px;
+border: 1px solid rgb(217, 217, 217);
+display: flex;
+
+
+flex-direction: column;
+
+font-family: sans-serif;
+color: rgb(0, 0, 0);
+}
+.brandboxtext h2{
+    position: absolute;
+    color: rgb(153, 255, 0);
+    text-shadow: 0 0px 5px 5px rgb(0, 0, 0);
+    
+    width: 95%;
+    top: 5%;
+left: 4%;
+   
+    background: #ffffff;
+font-size: 2rem;
+
+}
+
+.brandboxtext >p{
+    position: absolute;
+top: 25%;
+left: 4%;
+    width: 95%;
+    height: 50px;
+    
+    font-size:12px;
+    line-height: 1.5;
+    color: rgb(3, 3, 4);
+    //outline: 2px solid;
+}
+.minbbt{
+    position: absolute;
+    
+    left: 4%;
+    width: 90%;
+    height: 0px;
+    display: flex;
+
+    align-items: center;
+    
+}
+.minbbt img{
+    margin-right: 5px;
+    width: 5%;
+}
+.minbbt p{
+    color: black;
+    width: 90%;
+    font-size:9px ;
+}
+.mbt1{
+    top: 60%;
+}.mbt2{
+    top: 65%;
+}.mbt3{
+    top: 70%;
+}
+.formbox{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+form{
+    width: 80%;
+    height: 80%;
+    display: flex;
+    
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid rgb(217, 217, 217);
+    //outline: 1px solid rgb(123, 238, 0);
+}
+
+form .ff1{
+    display: flex;
+    justify-content: space-around;
+
+    
+
+}
+.fbox{
+
+    border-radius: 2px;
+    border: none;
+}
+.ff1{
+    width: 100%;
+}
+.ff1 input{
+    text-indent: 4%;
+    width: 40%;
+    height: 30px;background: rgba(219, 219, 219, 0.1);
+    font-size: 12px;
+
+}
+.ff{
+    width: 100%;
+
+    height: 30px;
+    display: flex;
+    justify-content: center;
+}
+.ff input{
+    text-indent: 2%;
+    width: 90%;
+    height: 100%;
+    font-size: 12px;
+    background: rgba(219, 219, 219, 0.1);
+}
+.formmessage{
+    
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+}
+.formmessage textarea{
+    padding:2%;
+    
+    //color: rgb(3, 3, 3);
+    width: 90%;
+    height: 100%;background: rgba(219, 219, 219, 0.1);
+
+
+
+}
+.ff4{
+    width: 100%;
+    height: 30px;
+    //background: #000;
+}
+.ff4 input{
+    width: 15%;
+    height: 80%;
+    margin-left: 6%;
+    color:black ;
+    font-family:Arial, Helvetica, sans-serif;
+   
+    background: #abfd88;
+    border: none;
+    border-radius: 2px;
+}

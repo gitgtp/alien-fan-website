@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>abuditon</title>
+    <link rel="stylesheet" href="site.css">
+    <style>
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #000;
+        }
+        #countryselect {
+            width: 200px;
+            height: 30px;
+            position: fixed;
+            top: 30%;
+            z-index: 1;
+            display: flex;
+            user-select: none;
+            justify-content: space-around;
+            align-items: center;
+            font-family: monospace;
+            background: #5fb200;
+            margin-bottom: 2%;
+            cursor: pointer;
+            border-radius: 5px; 
+        }
+        #countryselect p {
+            font-size: 13px;
+        }
+        #arrow {
+            width: 20px;
+            text-align: center;
+            height: 20px;
+            font-weight: 900;
+            transform: rotate(180deg);
+            font-size: 20px;
+        }
+        #arrow.arrowflip {
+            transform: rotate(360deg);
+        }
+        #regionlist {
+            position: relative;
+            top: 37%;
+            z-index: 20;
+            background: #ffffff;
+            width: 200px;
+            height: 150px;
+            display: none;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .rlist {
+            width: 90%;
+            height: 25px;
+            background: hwb(0 100% 0%);
+            display: flex;
+            box-shadow: 0 1px 4px 0px rgb(213, 211, 211);
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .rlist img {
+            width: 20%;
+            margin: 3%;
+            display: inline;
+            width: 10%;
+        }
+
+        .rlist p {
+            letter-spacing: 1px;
+            width: 80%;
+            font-size: 13px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+        }
+
+        .rlist:hover {
+          background: #bbee95;
+        }
+
+        #regionlist.flagactive {
+            display: flex;
+        }
+
+        #textarea {
+            top: 40%;
+            position: fixed;
+            width: 300px;
+            height: 250px;
+            border: 1px solid white;
+            background: black;
+        }
+
+        .intextarea {
+            position: absolute;
+            width: 5px;
+            height: 50%;
+            background: #379600;
+        }
+
+        .intextarea1 {
+            bottom: 5%;
+            right: -1%;
+        }
+
+        .intextarea2 {
+
+            top: 5%;
+            left: -1%;
+        }
+
+        #middletextarea {
+            width: 90%;
+            height: 70%;
+            margin: auto;
+            margin-top: 2%;
+            display: flex;
+            background: #000;
+        }
+
+        #message {
+
+            width: 90%;
+            height: 90%;
+            margin: auto;
+            border: none;
+            font-size: 1rem;
+            color: #ffffff;
+            font-family: "Silkscreen";
+            background: #000;
+        }
+
+        #message:focus {
+            outline: none;
+        }
+
+
+        #textareabutton {
+            width: 90%;
+            height: 20%;
+            margin: 5% auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .areabutton {
+            cursor: pointer;
+            width: 30%;
+            height: 50%;
+            background-color: #379600;
+            border: none;
+            font-family: "Silkscreen";
+            font-size: 1rem;
+        }
+
+        .areabutton:hover {
+            background: #f2ecec;
+        }
+    </style>
+</head>
+<body>
+    <header id="headerbox">
+        <div id="hamicon">
+            <div class="hamline" id="line1"></div>
+            <div class="hamline" id="line2"></div>
+            <div class="hamline" id="line3"></div>
+        </div>
+
+
+        <div id="logo">
+            <img src="images/alienlogo.svg" alt="company logo">
+        </div>
+    </header>
+
+    <!--<div id="menucontainer">
+
+        <div id="menudiv">
+            <a href="index.html" class="list">HOME</a>
+            <a href="media.html" class="list">MEDIA</a>
+            <a href="abuditon.html" class="list">ABUDTION</a>
+            <a href="join-us.html" class="list">JOIN US</a>
+             <a href="about-us.html" class="list">ABOUT</a>
+        </div>
+    -->
+    </div>
+
+
+    <div id="countryselect">
+    <p id="whereare">Where are you from</p>
+    <div id="arrow">^</div>
+    </div>
+
+    <div id="regionlist">
+    <span class="rlist"><img src="images/india-flag-icon.svg" alt="">
+    <p>India</p>
+    </span>
+
+    <span class="rlist"><img src="images/saudi-arabia-flag-icon.svg" alt="">
+    <p>Saudi Arabia</p></span>
+    <span class="rlist"><img src="images/china-flag-icon.svg" alt="">
+    <p>China</p></span>
+    <span class="rlist"><img src="images/brazil-flag-icon.svg" alt="">
+     <p>Brazil</p>
+    </span>
+     <span class="rlist"><img src="images/united-states-flag-icon.svg" alt="">
+     <p>United States</p>
+    </span>
+    </div>
+
+    <div id="textarea">
+        <div class="intextarea intextarea1"></div>
+        <div id="middletextarea">
+        <textarea id="message"></textarea>
+        </div>
+        <div id="textareabutton">
+         <input class="areabutton" type="file">ATTACH</button><button class="areabutton">SEND
+        </div>
+        <div class="intextarea intextarea2"></div>
+    </div>
+    
+    <script>
+
+        var closeflag = document.getElementById('arrow')
+        var regionlistall = document.getElementById('regionlist');
+
+        closeflag.onclick = function () {
+            closeflag.classList.toggle('arrowflip');
+            regionlistall.classList.toggle('flagactive')
+
+        }
+
+        var clist = document.querySelectorAll('.rlist')
+        var where = document.getElementById('whereare')
+        var region = document.getElementById('regionlist')
+        clist.forEach(function (box) {
+
+            box.addEventListener('click', function () {
+                where.innerText = box.innerText
+            })
+        })
+        var attachbut = document.getElementById('areabutton')
+        attachbut.onclick = function () {
+
+        }
+
+
+    </script>
+</body>
+
+</html>
